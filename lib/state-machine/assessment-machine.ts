@@ -117,7 +117,7 @@ export function transition(
 
     case 'q2_compliance':
       if (event.type === 'ANSWER_Q2') {
-        nextContext.q2_compliance = event.value;
+        nextContext.q2_compliance = event.value as ComplianceFlag[];
         effects.push('AUTOSAVE', 'ANALYTICS_Q2_ANSWERED');
       }
       if (event.type === 'NEXT' && guards.hasCompliance(nextContext)) {
