@@ -12,8 +12,8 @@ export const copy = {
   },
 
   hero: {
-    headline: "Your systems don't talk. We make them fluent.",
-    subhead: "AI-powered integration consulting that analyzes your entire tech stack and builds custom solutions to connect ANY disconnected systems—without rip-and-replace.",
+    headline: "Make your systems talk",
+    subhead: "Free assessment, then custom AI integrations that unify workflows across clinical, billing, and compliance.",
     ctaPrimary: "Get a Free Stack Assessment",
     ctaMicro: "Under 2 minutes. No PHI required.",
     ctaSecondary: "Watch a 2-minute demo",
