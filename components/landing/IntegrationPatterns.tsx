@@ -49,7 +49,7 @@ export function IntegrationPatterns() {
               Integration Patterns That Work
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We've connected hundreds of systems. Here are the most common workflows we automate.
+              We&apos;ve connected hundreds of systems. Here are the most common workflows we automate.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export function IntegrationPatterns() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-600 mb-4">
-              Don't see your workflow? We build custom integrations for any systems.
+              Don&apos;t see your workflow? We build custom integrations for any systems.
             </p>
             <button
               className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-2"

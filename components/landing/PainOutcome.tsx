@@ -288,7 +288,7 @@ function ROICalculator() {
             ${totalSavings.toLocaleString()}
           </p>
           <p className="text-sm text-green-600 mt-1">
-            That's ${(totalSavings * 12).toLocaleString()} annually!
+            That&apos;s ${(totalSavings * 12).toLocaleString()} annually!
           </p>
         </div>
       </motion.div>
