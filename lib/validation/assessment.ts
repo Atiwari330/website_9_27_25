@@ -30,7 +30,7 @@ export const AssessmentSubmissionSchema = z.object({
 
 // Create draft request
 export const CreateDraftSchema = z.object({
-  utm: z.record(z.string()).optional(),
+  utm: z.record(z.string(), z.string()).optional(),
   referrer: z.string().optional(),
 });
 
