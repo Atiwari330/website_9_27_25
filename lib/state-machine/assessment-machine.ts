@@ -1,4 +1,4 @@
-import type { AssessmentDraft } from '@/types/assessment';
+import type { AssessmentDraft, ComplianceFlag } from '@/types/assessment';
 
 export type AssessmentState =
   | 'intro'
