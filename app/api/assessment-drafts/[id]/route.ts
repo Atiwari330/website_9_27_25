@@ -5,10 +5,10 @@ import { drafts } from '../route';
 
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const draftId = params.id;
+    const { id: draftId } = await params;
 
     // Check if draft exists
     const existingDraft = drafts.get(draftId);
@@ -84,10 +84,10 @@ export async function PATCH(
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const draftId = params.id;
+    const { id: draftId } = await params;
     const draft = drafts.get(draftId);
 
     if (!draft) {
