@@ -12,8 +12,8 @@ export const copy = {
   },
 
   hero: {
-    headline: "Stop the double entry. Connect your EHR, RCM, and reporting—without rip-and-replace.",
-    subhead: "We design AI-powered workflows and build secure middleware for behavioral-health providers, cutting admin hours and reclaiming missed revenue.",
+    headline: "Your systems don't talk. We make them fluent.",
+    subhead: "AI-powered integration consulting that analyzes your entire tech stack and builds custom solutions to connect ANY disconnected systems—without rip-and-replace.",
     ctaPrimary: "Get a Free Stack Assessment",
     ctaMicro: "Under 2 minutes. No PHI required.",
     ctaSecondary: "Watch a 2-minute demo",
@@ -22,12 +22,20 @@ export const copy = {
 
   painOutcome: {
     painPoints: [
+      "Intake forms that don't flow to your EHR",
+      "Clinical notes trapped in one system",
+      "Billing delays from manual authorization checks",
+      "Scheduling systems disconnected from billing",
+      "Multiple logins for different platforms",
+      "Reports that require manual data gathering",
       "Duplicate charting for state and grant portals",
-      "Denials and AR cleanups across disconnected systems",
-      "Manual reports, manual reconciliations",
       "Staff burnout from swivel-chair work",
     ],
     outcomes: [
+      "Seamless data flow between ALL systems",
+      "Single entry, multiple destinations",
+      "Automated workflows you control",
+      "Real-time sync across platforms",
       "70–90% less manual re-entry",
       "Fewer denials; higher first-pass yield",
       "One source of truth for reporting",
@@ -39,12 +47,12 @@ export const copy = {
   howItWorks: {
     steps: [
       {
-        title: "Free Stack Assessment",
-        description: "Map your tools and workflows. No PHI, no obligation.",
+        title: "Free Tech Stack Analysis",
+        description: "We map ALL your systems and identify every disconnect. No PHI, no obligation.",
       },
       {
-        title: "Design & Pilot",
-        description: "See your automation plan and a working prototype.",
+        title: "Custom Solution Design",
+        description: "See exactly how we'll connect your systems using AI, automation, and smart middleware.",
       },
       {
         title: "Deliver & Monitor",
@@ -56,18 +64,18 @@ export const copy = {
 
   caseStudies: [
     {
-      title: "Outpatient Clinic (70 providers)",
-      blurb: "Cut manual reporting by 80% and reduced denials 15% in 60 days.",
+      title: "Intake to First Appointment (Multi-location)",
+      blurb: "Reduced intake time from 3 days to same-day with automated form flows.",
       link: "View the build",
     },
     {
-      title: "Residential SUD (multi-site)",
-      blurb: "Automated grant reporting; 40+ admin hours saved monthly.",
+      title: "Revenue Cycle Optimization (IOP Network)",
+      blurb: "Connected scheduling to billing—recovered $50k in missed charges.",
       link: "View the build",
     },
     {
-      title: "IOP/PHP Network",
-      blurb: "Unified EHR↔RCM sync; AR days down 9%.",
+      title: "Grant Reporting Automation (SUD Facility)",
+      blurb: "EHR to state portal automation saved 40 hours monthly.",
       link: "View the build",
     },
   ],
@@ -123,6 +131,14 @@ export const copy = {
         answer: "We extract and prepare required data and respect program rules—removing as much manual entry as allowed.",
       },
       {
+        question: "What types of systems can you connect?",
+        answer: "Any systems with APIs, file exports, or web interfaces: EHRs, billing, scheduling, CRM, analytics, state portals, grant systems, and more.",
+      },
+      {
+        question: "Do you use AI for the integrations?",
+        answer: "Yes, we use AI to analyze your workflows, design optimal connections, and automate complex data transformations between systems.",
+      },
+      {
         question: "What's the typical timeline?",
         answer: "Most first automations go live in 4–8 weeks.",
       },
@@ -142,30 +158,42 @@ export const copy = {
 
   assessment: {
     intro: {
-      title: "Answer 3 quick questions (under a minute)",
-      subtext: "No PHI. We'll tailor your assessment instantly.",
+      title: "Answer a few quick questions (under 2 minutes)",
+      subtext: "No PHI. We'll tailor your tech stack analysis instantly.",
       start: "Start",
       alternate: "Book a call instead",
     },
 
     q1: {
-      prompt: "How do you enter clinical notes today?",
-      options: ["Paper", "Electronically in an EHR", "Both", "Not sure"],
+      prompt: "Which systems do you currently use?",
+      options: ["EHR System", "Billing/RCM", "Scheduling", "CRM", "Analytics/Reporting", "State Portals", "Grant Systems", "Other"],
       ehrPrompt: "Which EHR?",
       ehrPlaceholder: "Start typing to search…",
       ehrOther: "Other (type name)",
     },
 
     q2: {
-      prompt: "Any special compliance or reporting needs?",
-      options: ["42 CFR Part 2", "State grant reporting", "MAT/OTP reporting", "County/Local portal", "None/Not sure"],
+      prompt: "Where do you spend the most time on manual data entry?",
+      options: ["Between intake and EHR", "EHR to billing", "Scheduling to billing", "Clinical notes to reports", "Multiple state/grant portals", "Other workflows"],
       tooltip: "We never collect PHI here—just workflow context.",
     },
 
     q3: {
-      prompt: "What's the biggest pain you want to fix first?",
-      options: ["Double entry", "Denials/AR", "State reporting", "Scheduling/attendance", "Other"],
+      prompt: "How many hours per week does your team spend on duplicate data entry?",
+      options: ["Less than 10 hours", "10-20 hours", "20-40 hours", "40-80 hours", "More than 80 hours"],
+      otherPlaceholder: "Additional context (optional, 120 characters)",
+    },
+
+    q4: {
+      prompt: "What's your biggest integration pain point?",
+      options: ["Systems don't communicate", "Too many manual steps", "Data stuck in silos", "Reporting takes forever", "Missing/delayed revenue", "Other"],
       otherPlaceholder: "Briefly describe (optional, 120 characters)",
+    },
+
+    q5: {
+      prompt: "Any special compliance or reporting needs?",
+      options: ["42 CFR Part 2", "State grant reporting", "MAT/OTP reporting", "County/Local portal", "CCBHC requirements", "None/Not sure"],
+      tooltip: "We never collect PHI here—just workflow context.",
     },
 
     contact: {
@@ -237,10 +265,10 @@ export const copy = {
   },
 
   seo: {
-    title: "AI-powered integrations for behavioral health — stop double entry",
-    description: "We design AI-powered workflows and secure middleware that connect your EHR, RCM, and reporting—without rip-and-replace. Free stack assessment.",
-    ogTitle: "Connect your EHR, RCM, and reporting",
-    ogDescription: "Cut admin hours and reclaim missed revenue.",
+    title: "AI-powered systems integration for behavioral health — connect any systems",
+    description: "We analyze your entire tech stack and build custom solutions to connect ANY disconnected systems—EHR, billing, scheduling, reporting, and more. Free tech stack analysis.",
+    ogTitle: "Your systems don't talk. We make them fluent.",
+    ogDescription: "AI-powered integration consulting that connects any disconnected systems.",
     ogImageAlt: "Diagram showing secure data flow between EHR, middleware, RCM, and state portal.",
   },
 } as const;

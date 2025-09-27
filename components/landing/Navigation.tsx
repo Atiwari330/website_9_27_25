@@ -97,10 +97,10 @@ export function Navigation() {
       </nav>
 
       {/* Mobile Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white border-t border-gray-200 p-4">
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white/95 backdrop-blur border-t border-gray-200 p-4 shadow-lg">
         <Button
           onClick={handleAssessmentClick}
-          className="w-full"
+          className="w-full button-lift shadow-lg"
           size="lg"
         >
           {copy.nav.ctaMobile}

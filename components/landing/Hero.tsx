@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/copy';
 import { ArrowRight, Play } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export function Hero() {
   const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
@@ -18,62 +19,85 @@ export function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-b from-gray-50 to-white py-20 md:py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            {copy.hero.headline}
-          </h1>
+    <section className="relative hero-gradient overflow-hidden py-16 sm:py-24 lg:py-32">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Copy */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
+          >
+            {/* Headline */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] text-gray-900 mb-6">
+              {copy.hero.headline}
+            </h1>
 
-          {/* Subhead */}
-          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            {copy.hero.subhead}
-          </p>
+            {/* Subhead with metrics */}
+            <p className="text-lg sm:text-xl text-gray-600 max-w-xl mb-2">
+              {copy.hero.subhead}
+            </p>
+            <p className="text-sm text-primary font-medium mb-8">
+              Providers save <span className="font-bold">40-80 hours/month</span> and cut denials by <span className="font-bold">10-15%</span>
+            </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Button
-              onClick={handleAssessmentClick}
-              size="lg"
-              className="w-full sm:w-auto text-base px-8 py-6"
-            >
-              {copy.hero.ctaPrimary}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <button
-              onClick={handleDemoClick}
-              className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors"
-            >
-              <Play className="h-5 w-5" />
-              {copy.hero.ctaSecondary}
-            </button>
-          </div>
-
-          {/* Microcopy */}
-          <p className="text-sm text-gray-500 mb-12">
-            {copy.hero.ctaMicro}
-          </p>
-
-          {/* Data Flow Animation */}
-          <div className="relative h-64 md:h-96 mb-12">
-            <DataFlowAnimation />
-          </div>
-
-          {/* Trust Strip */}
-          <div className="border-t border-gray-200 pt-12">
-            <p className="text-sm text-gray-500 mb-6">{copy.hero.trustStrip}</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 grayscale">
-              {/* Placeholder logos - replace with actual client logos */}
-              {[1, 2, 3, 4, 5].map((i) => (
-                <div
-                  key={i}
-                  className="w-24 h-12 bg-gray-300 rounded animate-pulse"
-                />
-              ))}
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-4">
+              <Button
+                onClick={handleAssessmentClick}
+                size="lg"
+                className="button-lift w-full sm:w-auto text-base px-8 py-6 shadow-lg"
+              >
+                {copy.hero.ctaPrimary}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                onClick={handleDemoClick}
+                variant="ghost"
+                size="lg"
+                className="group w-full sm:w-auto text-base"
+              >
+                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                {copy.hero.ctaSecondary}
+              </Button>
             </div>
-          </div>
+
+            {/* Microcopy */}
+            <p className="text-sm text-gray-500">
+              {copy.hero.ctaMicro}
+            </p>
+          </motion.div>
+
+          {/* Right Column - Data Flow Animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative h-[400px] lg:h-[500px]"
+          >
+            <DataFlowAnimation />
+          </motion.div>
         </div>
+
+        {/* Trust Strip */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="border-t border-gray-200 pt-12 mt-16"
+        >
+          <p className="text-sm text-gray-500 text-center mb-6">{copy.hero.trustStrip}</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 grayscale">
+            {/* Placeholder logos - replace with actual client logos */}
+            {[1, 2, 3, 4, 5].map((i) => (
+              <div
+                key={i}
+                className="w-24 h-12 bg-gray-300 rounded animate-pulse"
+              />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -82,14 +106,16 @@ export function Hero() {
 function DataFlowAnimation() {
   return (
     <div className="absolute inset-0 flex items-center justify-center">
-      <svg
+      <motion.svg
         viewBox="0 0 800 400"
-        className="w-full h-full max-w-4xl"
-        aria-label="Data flow diagram showing EHR, Middleware, RCM, and Portal connections"
+        className="w-full h-full"
+        aria-label="Data flow diagram showing systems connected through AI Integration Hub"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        {/* Nodes */}
         <g className="nodes">
-          {/* EHR Node */}
+          {/* Source System Node */}
           <rect
             x="50"
             y="150"
@@ -100,14 +126,22 @@ function DataFlowAnimation() {
           />
           <text
             x="110"
-            y="195"
+            y="190"
             className="fill-blue-900 text-sm font-semibold"
             textAnchor="middle"
           >
-            EHR
+            Your
+          </text>
+          <text
+            x="110"
+            y="205"
+            className="fill-blue-900 text-sm font-semibold"
+            textAnchor="middle"
+          >
+            Systems
           </text>
 
-          {/* Middleware Node */}
+          {/* Integration Hub Node */}
           <rect
             x="300"
             y="150"
@@ -118,14 +152,22 @@ function DataFlowAnimation() {
           />
           <text
             x="370"
-            y="195"
+            y="190"
             className="fill-purple-900 text-sm font-semibold"
             textAnchor="middle"
           >
-            AI Middleware
+            AI Integration
+          </text>
+          <text
+            x="370"
+            y="205"
+            className="fill-purple-900 text-sm font-semibold"
+            textAnchor="middle"
+          >
+            Hub
           </text>
 
-          {/* RCM Node */}
+          {/* System A Node */}
           <rect
             x="570"
             y="80"
@@ -136,14 +178,22 @@ function DataFlowAnimation() {
           />
           <text
             x="630"
-            y="125"
+            y="120"
             className="fill-green-900 text-sm font-semibold"
             textAnchor="middle"
           >
-            RCM
+            Billing &amp;
+          </text>
+          <text
+            x="630"
+            y="135"
+            className="fill-green-900 text-sm font-semibold"
+            textAnchor="middle"
+          >
+            Revenue
           </text>
 
-          {/* Portal Node */}
+          {/* System B Node */}
           <rect
             x="570"
             y="220"
@@ -154,11 +204,19 @@ function DataFlowAnimation() {
           />
           <text
             x="630"
-            y="265"
+            y="260"
             className="fill-orange-900 text-sm font-semibold"
             textAnchor="middle"
           >
-            State Portal
+            Reporting &amp;
+          </text>
+          <text
+            x="630"
+            y="275"
+            className="fill-orange-900 text-sm font-semibold"
+            textAnchor="middle"
+          >
+            Analytics
           </text>
         </g>
 
@@ -234,7 +292,7 @@ function DataFlowAnimation() {
             />
           </circle>
         </g>
-      </svg>
+      </motion.svg>
     </div>
   );
 }

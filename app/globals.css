@@ -51,18 +51,18 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.5 0.25 264); /* Healthcare blue #1E40FF */
+  --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.5 0.25 264); /* Same as primary for consistency */
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --ring: oklch(0.5 0.25 264);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -118,5 +118,28 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .card-elevated {
+    @apply rounded-2xl border bg-background/80 backdrop-blur;
+    box-shadow: 0 1px 0 0 rgba(255,255,255,.4) inset, 0 10px 30px -10px rgba(2,6,23,.25);
+  }
+
+  .card-elevated:hover {
+    box-shadow: 0 1px 0 0 rgba(255,255,255,.4) inset, 0 10px 40px -8px rgba(2,6,23,.35);
+  }
+
+  .hero-gradient {
+    background-image: radial-gradient(1200px 600px at 80% -10%, oklch(0.5 0.25 264 / 0.1), transparent);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-primary to-blue-700 bg-clip-text text-transparent;
+  }
+
+  .button-lift {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg;
   }
 }
