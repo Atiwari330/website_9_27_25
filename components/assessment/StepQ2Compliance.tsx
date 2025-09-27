@@ -28,10 +28,11 @@ export function StepQ2Compliance({ value = [], onChange }: StepQ2ComplianceProps
       onChange(['none_unsure']);
     } else {
       const filtered = value.filter((v) => v !== 'none_unsure');
-      if (filtered.includes(optionValue as ComplianceFlag)) {
-        onChange(filtered.filter((v) => v !== optionValue));
+      const typedValue = optionValue as ComplianceFlag;
+      if (filtered.includes(typedValue)) {
+        onChange(filtered.filter((v) => v !== typedValue));
       } else {
-        onChange([...filtered, optionValue]);
+        onChange([...filtered, typedValue]);
       }
     }
   };
