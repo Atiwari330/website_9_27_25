@@ -1,0 +1,24 @@
+{
+  "items": [
+    { "name": "Epic", "slug": "epic" },
+    { "name": "Cerner", "slug": "cerner" },
+    { "name": "Athenahealth", "slug": "athenahealth" },
+    { "name": "AdvancedMD", "slug": "advancedmd" },
+    { "name": "SimplePractice", "slug": "simplepractice" },
+    { "name": "TherapyNotes", "slug": "therapynotes" },
+    { "name": "Kareo", "slug": "kareo" },
+    { "name": "DrChrono", "slug": "drchrono" },
+    { "name": "NextGen", "slug": "nextgen" },
+    { "name": "eClinicalWorks", "slug": "eclinicalworks" },
+    { "name": "Allscripts", "slug": "allscripts" },
+    { "name": "Greenway Health", "slug": "greenway" },
+    { "name": "Qualifacts CareLogic", "slug": "carelogic" },
+    { "name": "Netsmart myAvatar", "slug": "myavatar" },
+    { "name": "SMART", "slug": "smart" },
+    { "name": "Credible", "slug": "credible" },
+    { "name": "Valant", "slug": "valant" },
+    { "name": "Opus", "slug": "opus" },
+    { "name": "Other", "slug": "other" }
+  ],
+  "updatedAt": "2025-09-01T00:00:00Z"
+}
