@@ -3,10 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/copy';
 import { Phone } from 'lucide-react';
-import { useState } from 'react';
 
-export function FinalCTA() {
-  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
+interface FinalCTAProps {
+  onAssessmentClick?: () => void;
+}
+
+export function FinalCTA({ onAssessmentClick }: FinalCTAProps) {
 
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
@@ -18,7 +20,7 @@ export function FinalCTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
-              onClick={() => setIsAssessmentOpen(true)}
+              onClick={onAssessmentClick}
               size="lg"
               variant="secondary"
               className="text-base px-8 py-6"

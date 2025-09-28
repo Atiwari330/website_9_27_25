@@ -3,15 +3,15 @@
 import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/copy';
 import { ArrowRight, Play } from 'lucide-react';
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export function Hero() {
-  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
+interface HeroProps {
+  onAssessmentClick?: () => void;
+}
 
+export function Hero({ onAssessmentClick }: HeroProps) {
   const handleAssessmentClick = () => {
-    setIsAssessmentOpen(true);
-    // TODO: Open assessment modal
+    onAssessmentClick?.();
   };
 
   const handleDemoClick = () => {

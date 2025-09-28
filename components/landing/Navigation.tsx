@@ -6,9 +6,12 @@ import { Button } from '@/components/ui/button';
 import { copy } from '@/lib/copy';
 import { Menu, X } from 'lucide-react';
 
-export function Navigation() {
+interface NavigationProps {
+  onAssessmentClick?: () => void;
+}
+
+export function Navigation({ onAssessmentClick }: NavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAssessmentOpen, setIsAssessmentOpen] = useState(false);
 
   const navItems = [
     { label: copy.nav.solutions, href: '#solutions' },
@@ -21,8 +24,7 @@ export function Navigation() {
   ];
 
   const handleAssessmentClick = () => {
-    setIsAssessmentOpen(true);
-    // TODO: Open assessment modal
+    onAssessmentClick?.();
   };
 
   return (
